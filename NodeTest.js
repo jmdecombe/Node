@@ -22,8 +22,8 @@ for (var i = 0; i < animals.length; i++) {
 }
 console.log(animals);
 setTimeout(function() {
-	console.log('3 seconds have elapsed.')
-}, 3000);
+	console.log('2 seconds have elapsed.')
+}, 2000);
 (function() {
 	console.log('just do it!');
 })();
