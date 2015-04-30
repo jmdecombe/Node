@@ -1,0 +1,2 @@
+- REPL is not working right
+- use (function() { ... })(); to create a new variable scope
