@@ -34,24 +34,24 @@ http.get(process.argv[2], function(response) {
 var urls = process.argv.slice(2)
 var count = 0
 var contents = []
-function printData() {
+function printContents() {
 	for (var i = 0; i < contents.length; i++) {
 		console.log('URL ' + urls[i] + ' (' + contents[i].length + ' characters)... ')
 	}
 }
-function getData(index) {
-	http.get(urls[i], function(response) {
+function getContents(index) {
+	http.get(urls[index], function(response) {
 		response.pipe(bl(function (error, data) {
 			if (error) {
 				return console.error(error)
 			}
 			contents[index] = data.toString();
 			if (++count == urls.length) {
-				printData();
+				printContents();
 			}
 		}))
 	})
 }
 for (var i = 0; i < urls.length; i++) {
-	getData(i)
+	getContents(i)
 }
