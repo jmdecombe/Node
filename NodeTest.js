@@ -17,9 +17,14 @@ var fs = require('fs');
 var buffer = fs.readFileSync(filepath);
 var n = buffer.toString().split('\n').length - 1;
 console.log(n + ' newline characters in ' + filepath + ' (synchronous)');
-fs.readFile(filepath, function(err, data) {
-	var n = data.toString().split('\n').length - 1;
-	console.log(n + ' newline characters in ' + filepath + ' (asynchronous)');
+fs.readFile(filepath, 'utf8', function(error, data) {
+	if (error) {
+		console.log('ERROR: ' + error);
+	}
+	else {
+		var n = data.split('\n').length - 1;
+		console.log(n + ' newline characters in ' + filepath + ' (asynchronous)');
+	}
 });
 var v = test();
 console.log(v);
@@ -51,14 +56,14 @@ setTimeout(function() {
 	console.log('just do it!');
 })();
 var http = require('http');
-http.request({hostname: 'jmdecombe.com'}, function(res) {
+http.request({hostname: 'ludicode.com'}, function(res) {
 	res.setEncoding('utf8');
 	res.on('data', function(chunk) {
-//		console.log(chunk);
+		console.log(chunk);
 	});
 }).end();
-var httpFile = require('./HTTPServer');
-//httpFile.startHTTPServer();
+var startHTTPServer = require('./StartHTTPServer');
+startHTTPServer();
 function test() {
 	var foo = {
 		bar: 12.3,

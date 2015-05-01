@@ -4,9 +4,9 @@ if (process.argv.length == 4) {
 		if (error) {
 			return console.log(error);
 		} else {
-			for (var i = 0; i < list.length; i++) {
-				console.log(list[i]);
-			}
+			list.forEach(function(file) {
+				console.log(file);
+			});
 		}
 	});
 }
