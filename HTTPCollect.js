@@ -25,19 +25,18 @@ http.get(process.argv[2], function(response) {
 	response.pipe(bl(function (error, data) {
 		if (error) {
 			return console.error(error)
-		} else {
-			console.log('char count... ' + data.length)
-			console.log('all data... ' + data.toString())
 		}
+		console.log('char count... ' + data.length)
+		console.log('all data... ' + data.toString())
 	}))
 }) */
 // VERSION 3
 var urls = process.argv.slice(2)
-var finished = 0
-var received = []
+var count = 0
+var contents = []
 function printData() {
-	for (var i = 0; i < received.length; i++) {
-		console.log('URL ' + urls[i] + ' (' + received[i].length + ' characters)... ')
+	for (var i = 0; i < contents.length; i++) {
+		console.log('URL ' + urls[i] + ' (' + contents[i].length + ' characters)... ')
 	}
 }
 function getData(index) {
@@ -46,8 +45,8 @@ function getData(index) {
 			if (error) {
 				return console.error(error)
 			}
-			received[index] = data.toString();
-			if (++finished == urls.length) {
+			contents[index] = data.toString();
+			if (++count == urls.length) {
 				printData();
 			}
 		}))
