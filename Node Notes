@@ -2,3 +2,7 @@
 - use (function() { ... })(); to create a new variable scope
 - use git --version, config, init, add, commit, diff, checkout, remote, push, pull, fork, clone, branch, fetch, merge
 - use pages.github.com to host web pages related to organization or projects
+- listen to events sent by emitters, such as streams returned as HTTP server responses
+- use socket as duplex stream, writing to or reading from it
+- use HTTP request to fetch properties (header, query) and response to return data (header, body)
+- leverage stream nature of both request and response
