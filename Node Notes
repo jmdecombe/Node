@@ -1,2 +1,4 @@
 - REPL is not working right
 - use (function() { ... })(); to create a new variable scope
+- use git --version, config, init, add, commit, diff, checkout, remote, push, pull, fork, clone, branch, fetch, merge
+- use pages.github.com to host web pages related to organization or projects

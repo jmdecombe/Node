@@ -1,3 +1,26 @@
+console.log(process.argv);
+var alength = process.argv.length;
+var filepath = process.argv[1];
+if (alength > 2) {
+	filepath = process.argv[2];
+	if (alength > 3) {
+		var sum = 0;
+		for (var i = 3; i < alength; i++) {
+			sum += Number(process.argv[i]);
+		}
+		console.log((alength - 3) + ' parameters totaling ' + sum);
+	}
+} else {
+	console.log('no app parameters');
+}
+var fs = require('fs');
+var buffer = fs.readFileSync(filepath);
+var n = buffer.toString().split('\n').length - 1;
+console.log(n + ' newline characters in ' + filepath + ' (synchronous)');
+fs.readFile(filepath, function(err, data) {
+	var n = data.toString().split('\n').length - 1;
+	console.log(n + ' newline characters in ' + filepath + ' (asynchronous)');
+});
 var v = test();
 console.log(v);
 console.log(v.bar);
@@ -31,7 +54,7 @@ var http = require('http');
 http.request({hostname: 'jmdecombe.com'}, function(res) {
 	res.setEncoding('utf8');
 	res.on('data', function(chunk) {
-		console.log(chunk);
+//		console.log(chunk);
 	});
 }).end();
 var httpFile = require('./HTTPServer');
