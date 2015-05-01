@@ -39,7 +39,7 @@ function printContents() {
 		console.log('URL ' + urls[i] + ' (' + contents[i].length + ' characters)... ')
 	}
 }
-function getContents(index) {
+function getContents(urls, index) {
 	http.get(urls[index], function(response) {
 		response.pipe(bl(function (error, data) {
 			if (error) {
@@ -53,5 +53,5 @@ function getContents(index) {
 	})
 }
 for (var i = 0; i < urls.length; i++) {
-	getContents(i)
+	getContents(urls, i)
 }
