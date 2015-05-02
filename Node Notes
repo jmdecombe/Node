@@ -6,3 +6,7 @@
 - use socket as duplex stream, writing to or reading from it
 - use HTTP request to fetch properties (header, query) and response to return data (header, body)
 - leverage stream nature of both request and response
+- update npm with npm install npm -g
+- use npm help, install (--save), ls, whoami, adduser, publish, view, version, dist-tags, outdated, update
+- create account at npmjs.com
+- read about semantic versioning at http://semver.org

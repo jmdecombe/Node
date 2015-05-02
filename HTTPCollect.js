@@ -36,7 +36,7 @@ var count = 0
 var contents = []
 function printContents() {
 	for (var i = 0; i < contents.length; i++) {
-		console.log('URL ' + urls[i] + ' (' + contents[i].length + ' characters)... ')
+		console.log(contents[i])
 	}
 }
 function getContents(urls, index) {
