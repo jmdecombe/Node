@@ -7,6 +7,7 @@
 - use HTTP request to fetch properties (header, query) and response to return data (header, body)
 - leverage stream nature of both request and response
 - update npm with npm install npm -g
-- use npm help, install (--save), ls, whoami, adduser, publish, view, version, dist-tags, outdated, update
+- use npm help, install (--save), ls, whoami, adduser, publish, view, version, dist-tags, outdated, update, rm/uninstall (--save)
 - create account at npmjs.com
 - read about semantic versioning at http://semver.org
+- functions are objects inherited from Function.prototype, so can be added properties, etc.
