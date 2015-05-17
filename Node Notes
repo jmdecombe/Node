@@ -11,3 +11,4 @@
 - create account at npmjs.com
 - read about semantic versioning at http://semver.org
 - functions are objects inherited from Function.prototype, so can be added properties, etc.
+- use {} syntax to create objects inheriting from Object.prototype
