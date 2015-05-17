@@ -1,14 +1,14 @@
 module.exports = function(dirPath, fileExt, printList) {
-	var fs = require('fs');
-	fs.readdir(dirPath, function(error, list) {
+	const fs = require('fs')
+	fs.readdir(dirPath, function (error, list) {
 		if (error) {
-			return printList('ERROR READING DIRECTORY');
+			return printList('ERROR READING DIRECTORY')
 		} else {
-			var ext = '.' + fileExt;
-			var path = require('path');
+			const path = require('path')
+			var ext = '.' + fileExt
 			printList(null, list.filter(function (filePath) {
-				return (path.extname(filePath) == ext);
-			}));
+				return (path.extname(filePath) == ext)
+			}))
 		}
 	});
 };

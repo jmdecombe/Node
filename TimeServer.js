@@ -12,7 +12,7 @@ function now() {
 		+ pad(date.getMinutes())
 
 }
-var server = net.createServer(function(socket) {
+var server = net.createServer(function (socket) {
 	socket.end(now() + '\n') // alternately, require strftime and call socket.end(strftime('%Y-%m-%d %H:%M\n'))
 })
 server.listen(process.argv[2])

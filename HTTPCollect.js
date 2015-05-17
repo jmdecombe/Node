@@ -1,9 +1,9 @@
+// VERSION 1
 const http = require('http')
-/* VERSION 1
 var charCount = 0
 var dataCount = 0
 var allData = ''
-http.get(process.argv[2], function(response) {
+http.get(process.argv[2], function (response) {
 	response.setEncoding('utf8')
 	response.on("data", function (data) {
 		charCount += data.length
@@ -18,10 +18,10 @@ http.get(process.argv[2], function(response) {
 		console.log('data count... ' + dataCount)
 		console.log('all data... ' + allData)
 	})
-}) */
+})
+// VERSION 2
 const bl = require('bl')
-/* VERSION 2
-http.get(process.argv[2], function(response) {
+http.get(process.argv[2], function (response) {
 	response.pipe(bl(function (error, data) {
 		if (error) {
 			return console.error(error)
@@ -29,7 +29,7 @@ http.get(process.argv[2], function(response) {
 		console.log('char count... ' + data.length)
 		console.log('all data... ' + data.toString())
 	}))
-}) */
+})
 // VERSION 3
 var urls = process.argv.slice(2)
 var count = 0
@@ -40,14 +40,14 @@ function printContents() {
 	}
 }
 function getContents(urls, index) {
-	http.get(urls[index], function(response) {
+	http.get(urls[index], function (response) {
 		response.pipe(bl(function (error, data) {
 			if (error) {
 				return console.error(error)
 			}
-			contents[index] = data.toString();
+			contents[index] = data.toString()
 			if (++count == urls.length) {
-				printContents();
+				printContents()
 			}
 		}))
 	})
