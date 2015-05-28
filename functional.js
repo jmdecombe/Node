@@ -153,8 +153,18 @@ function getDependencies(tree, result) {
 	return result.sort()
 }
 // CURRYING
-
+function curryN(fn, n) {
+	n = n || fn.length
+	return function curriedN(arg) {
+		if (n <= 1) {
+			return fn(arg)
+		}
+		return curryN(fn.bind(this, arg), n - 1)
+	}
+}
 // FUNCTION CALL
-
+	// The value of `this` in Function.call is the function that will be executed.
+	// Bind returns a new function with the value of `this` fixed to whatever was passed as its first argument.
+	// Every function 'inherits' from Function.prototype, thus every function, including call, apply and bind, have the methods call apply and bind.
 // EXPORTS
-module.exports = getDependencies
+module.exports = Function.prototype.call.bind(Array.prototype.slice);
