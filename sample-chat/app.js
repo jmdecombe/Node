@@ -56,5 +56,10 @@ app.use(function(err, req, res, next) {
   });
 });
 
+// CUSTOM CODE BEGINS HERE
+var server = http.createServer(app).listen(app.get('port'), function () {
+  console.log('Express server listening on port ' + app.get('port'))
+})
+// CUSTOM CODE ENDS HERE
 
 module.exports = app;
